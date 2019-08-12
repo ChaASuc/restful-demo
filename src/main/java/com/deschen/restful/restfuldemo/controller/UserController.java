@@ -29,12 +29,10 @@ public class UserController {
         return ResultVO.success();
     }
 
-    @PutMapping("/user/{id}")
+    @PutMapping("/user")
     public ResultVO updateUser(
-            @RequestBody User user,
-            @PathVariable Long id
+            @RequestBody User user
     ) {
-        user.setId(id);
         userService.updateUser(user);
         return ResultVO.success();
     }
